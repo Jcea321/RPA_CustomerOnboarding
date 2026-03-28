@@ -1,0 +1,13 @@
+﻿{
+  "Name": "The Automation Challenge  CRM App",
+  "Type": "Screen",
+  "Id": "xJpF7jz1VUefhtTzOtoaZg",
+  "Reference": "MJ2ZFT4AyU6K9YUu_j9EbQ/xJpF7jz1VUefhtTzOtoaZg",
+  "ParentRef": "MJ2ZFT4AyU6K9YUu_j9EbQ/CJJ3MwlTkkinIouF41WZSA",
+  "Created": "2026-03-25T17:26:43.0651505Z",
+  "Updated": "2026-03-25T17:26:43.0651505Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.28.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
