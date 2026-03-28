@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Prefer not to say",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "9uCbHck2Bk-Q-hnXzQ-m1w",
+  "Reference": "MJ2ZFT4AyU6K9YUu_j9EbQ/9uCbHck2Bk-Q-hnXzQ-m1w",
+  "ParentRef": "MJ2ZFT4AyU6K9YUu_j9EbQ/xJpF7jz1VUefhtTzOtoaZg",
+  "Created": "2026-03-28T18:07:10.2093103Z",
+  "Updated": "2026-03-28T18:07:10.2093103Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.28.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
