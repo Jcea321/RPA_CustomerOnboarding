@@ -1,0 +1,651 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DesktopDataCapturing" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_CustomerData" Type="InArgument(sd:DataTable)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>DesktopDataCapturing_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DesktopDataCapturing" sap:VirtualizedContainerService.HintSize="874.8000000000001,7334.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="582.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Desktop Data Capturing invoke&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Automates customer data entry into CRM desktop application" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="582.4,7136.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="4fe3c1df-a6b1-441a-994a-6d9cac776425" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="580.8,6891.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Automates Reseting Customer Table" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="547.2,193.6" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="wV-eMbtm9kqYCJvMrPmUag" DesignTimeRectangle="810, 278, 93, 29" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='12' /&gt;" Guid="daf2bfb1-448c-4862-891b-1a29d585cb73" InformativeScreenshot="71cb55c278f4b23edb97a1fe692cb38f.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/syDNiyVxL0yEbAhf6QM_FA" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Confirming Reset Table" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="547.2,193.6" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Timeout="3" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="halDByL800G8ibYEf0SzPQ" DesignTimeRectangle="233, 119, 75, 23" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='6' title='&amp;amp;Yes' /&gt;" Guid="a7589c2b-f668-4e99-b17a-eef1ba871094" InformativeScreenshot="347577d5be30c27a4f26b559a8200486.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/ECp53KVB1kO1rgc-XlYd0Q" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='#32770' title='Refresh Table' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_CustomerData]" DisplayName="Loop Customer Records To Onboard" sap:VirtualizedContainerService.HintSize="547.2,6444" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="545.6,6271.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="512,6211.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                      <TryCatch.Try>
+                        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="510.4,5595.2" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Reset Input Fields" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,56.8" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable ContentHash="ZhRkxyMrmkab3giSZ7mKjA" DesignTimeRectangle="603, 278, 88, 29" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='14' /&gt;" Guid="5511e6f3-f81d-488f-a16e-aa32096a1cb5" InformativeScreenshot="229690b899cd5a42813b747fe8d42c4c.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/rNZXFJRyuEuiauoCogeH7Q" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                            </uix:NClick.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <WriteLine DisplayName="Write Customer Being Process" sap:VirtualizedContainerService.HintSize="476.8,56.8" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Processing on Desktop App: &quot; + CurrentRow(&quot;last name&quot;).ToString() + &quot;, &quot; + CurrentRow(&quot;first name&quot;).ToString()]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </WriteLine>
+                          <uix:NTypeInto ActivateBefore="True" ClipboardMode="[UiPath.UIAutomationNext.Enums.NTypeByClipboardMode.WhenPossible]" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Text="[CurrentRow(&quot;first name&quot;).ToString()]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="Y72reb8V9EC3lBrsmToEFA" DesignTimeRectangle="216, 106, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='33' /&gt;" Guid="2bfe0ca3-532f-45a7-97fb-afc85e5d588a" InformativeScreenshot="2a9b12fc059a912564ff57f1c2d5010e.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/6Lqy179ITUO0bK-j9kIEag" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions Mode="AspectChanges">
+                                <uix:VerifyExecutionTypeIntoOptions.Target>
+                                  <uix:TargetAnchorable CVScreenId="f42bf208-05d8-4c1e-b1cd-f7a497f78b65" ContentHash="uNn0Ac3SE0KLQZ6CUFKDOA" CvElementArea="268, 131, 182, 35" CvType="InputBox" DesignTimeRectangle="270, 133, 180, 34" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='33' /&gt;" Guid="2d17170c-5a33-4352-bd7d-f7fe9ab38148" InformativeScreenshot="ac62a3eb78b88ab0c3847851c75e36a8.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/GP4FAG-wSki8VF2PcYnQMA" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="f42bf208-05d8-4c1e-b1cd-f7a497f78b65" CvTextArea="15, 140, 74, 17" CvTextArgument="First Name" CvType="Text" DesignTimeRectangle="13, 133, 81, 34" FullSelectorArgument="&lt;wnd cls='TkChild' idx='34' /&gt;" Guid="32486f74-68fa-465a-8734-c2c2a519577c" SearchSteps="Selector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:VerifyExecutionTypeIntoOptions.Target>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClipboardMode="[UiPath.UIAutomationNext.Enums.NTypeByClipboardMode.WhenPossible]" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="SameAsCard" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Text="[CurrentRow(&quot;last name&quot;).ToString()]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="T4tWg-7O5EOHia8S31oPIg" DesignTimeRectangle="728, 106, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='31' /&gt;" Guid="6282804d-ca8c-4917-8983-9e74a9602aaa" InformativeScreenshot="440794a404c1fba28b37804a7da79dd7.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/fDAMcYa2HUCZ3SZO9bSkQA" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions Mode="AspectChanges">
+                                <uix:VerifyExecutionTypeIntoOptions.Target>
+                                  <uix:TargetAnchorable CVScreenId="f42bf208-05d8-4c1e-b1cd-f7a497f78b65" ContentHash="GKu8UUC-PUGml2nl1efa0A" CvElementArea="908, 131, 182, 35" CvType="InputBox" DesignTimeRectangle="910, 133, 180, 34" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='31' /&gt;" Guid="008580ce-e5a4-45bc-88a6-7659c70020a6" InformativeScreenshot="a46abd0159da1a054a40479789c4b3a5.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/dYOQSDpFaEuTnr8iG5SsuQ" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:VerifyExecutionTypeIntoOptions.Target>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Trigger Gender Selection Display" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,265.6" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable ContentHash="E_yyjiqVxkmPgaRQNjInTA" DesignTimeRectangle="216, 136, 141, 21" FullSelectorArgument="&lt;wnd cls='TkChild' idx='29' /&gt;" Guid="e094a408-6897-4dd4-ac64-e44c22adbed6" InformativeScreenshot="b5ef0148d84a119000096ace92ae09fa.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/7kgAdG1cgkOBd8zLYZVUvw" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions Mode="Appears">
+                                <uix:VerifyExecutionOptions.Target>
+                                  <uix:TargetAnchorable ContentHash="XTOReLSRn0i4J03-KL9prQ" DesignTimeRectangle="1, 1, 155, 203" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='3' /&gt;" Guid="83ee690b-6a6c-4a47-bab3-f2cd6686dcf2" InformativeScreenshot="b9b39e88743415b0421d549b8b0fd90d.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/fJ-oWA-Cq06wRRN3jeCx6g" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='popdown' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:VerifyExecutionOptions.Target>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select Customer Gender" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,265.6" sap2010:WorkflowViewState.IdRef="NClick_17" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable CVScreenId="7709ba64-dbf9-4355-b942-8e63e4a54c0f" ContentHash="c13JgY8L8EyI1TuvgU_Iig" CvTextArea="1, 23, 50, 15" CvTextArgument="[CurrentRow(&quot;gender&quot;).ToString()]" CvType="Text" DesignTimeRectangle="1, 23, 50, 15" ElementType="Text" ElementVisibilityArgument="Visible" Guid="09187b0d-4fb1-4175-bb11-403947015feb" InformativeScreenshot="6ede0665f385391eb5c8cc6dfe84541b.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/rf95OevWSkWyICYMqBGsiA" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='popdown' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions Mode="TextChanges">
+                                <uix:VerifyExecutionOptions.Target>
+                                  <uix:TargetAnchorable CVScreenId="7f1c4442-c7e9-4011-b528-d54c39d21999" ContentHash="Sq0xIO444UCOHUPDzL4glQ" CvElementArea="267, 168, 178, 29" CvType="InputBox" DesignTimeRectangle="270, 170, 176, 26" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='29' /&gt;" Guid="18537836-ae1f-4bc0-a4e2-a8e3c28959cc" InformativeScreenshot="9d0e9eac2708f9a58d9a4511a0a0a25f.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/ft8-gvqNQU-7L7hl2Fa7Bg" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="7f1c4442-c7e9-4011-b528-d54c39d21999" CvTextArea="15, 173, 51, 16" CvTextArgument="Gender" CvType="Text" DesignTimeRectangle="13, 166, 58, 34" FullSelectorArgument="&lt;wnd cls='TkChild' idx='30' /&gt;" Guid="ad8b2f41-e02d-49b6-a4e6-b097bfbd940c" SearchSteps="Selector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:VerifyExecutionOptions.Target>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Trigger State Selection Display" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,265.6" sap2010:WorkflowViewState.IdRef="NClick_19" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable CVScreenId="eabb7f36-c8bb-4cb9-a451-30ea2892ddf3" ContentHash="UC181zQSYU6SpxN5qPhzOA" CvElementArea="907, 167, 178, 30" CvType="InputBox" DesignTimeRectangle="910, 170, 176, 26" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='27' /&gt;" Guid="20ed93ce-6061-4143-9324-9ddae3da44ec" InformativeScreenshot="a05b617f052f0ac4853848f864b53119.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/yZrDBZ9ilE-rrqImxO35Ew" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target CVScreenId="eabb7f36-c8bb-4cb9-a451-30ea2892ddf3" CvTextArea="637, 175, 36, 15" CvTextArgument="State" CvType="Text" DesignTimeRectangle="636, 166, 43, 34" FullSelectorArgument="&lt;wnd cls='TkChild' idx='28' /&gt;" Guid="37206af5-3cd7-4b95-9baf-e017f812748d" SearchSteps="Selector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions Mode="Appears">
+                                <uix:VerifyExecutionOptions.Target>
+                                  <uix:TargetAnchorable ContentHash="XTOReLSRn0i4J03-KL9prQ" DesignTimeRectangle="1, 1, 155, 203" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='3' /&gt;" Guid="83ee690b-6a6c-4a47-bab3-f2cd6686dcf2" InformativeScreenshot="b9b39e88743415b0421d549b8b0fd90d.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/fJ-oWA-Cq06wRRN3jeCx6g" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='popdown' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:VerifyExecutionOptions.Target>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry selecting a state in the customer onboarding application" sap:VirtualizedContainerService.HintSize="476.8,1504.8" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="7">
+                            <ui:RetryScope.ActivityBody>
+                              <ActivityAction>
+                                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="475.2,492.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press 'Down' key multiple times to show other options" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="441.6,432.8" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Shortcuts="[d(hk)][k(Down)][u(hk)][d(hk)][k(Down)][u(hk)][d(hk)][k(Down)][u(hk)][d(hk)][k(Down)][u(hk)][d(hk)][k(Down)][u(hk)][d(hk)][k(Down)][u(hk)][d(hk)][k(Down)][u(hk)][d(hk)][k(Down)][u(hk)][d(hk)][k(Down)][u(hk)][d(hk)][k(Down)][u(hk)]" Version="V5">
+                                    <uix:NKeyboardShortcuts.Target>
+                                      <uix:TargetAnchorable ContentHash="XTOReLSRn0i4J03-KL9prQ" DesignTimeRectangle="1, 1, 155, 203" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='3' /&gt;" Guid="83ee690b-6a6c-4a47-bab3-f2cd6686dcf2" InformativeScreenshot="b9b39e88743415b0421d549b8b0fd90d.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/fJ-oWA-Cq06wRRN3jeCx6g" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='popdown' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                    </uix:NKeyboardShortcuts.Target>
+                                    <uix:NKeyboardShortcuts.VerifyOptions>
+                                      <uix:VerifyExecutionOptions Mode="AspectChanges">
+                                        <uix:VerifyExecutionOptions.Target>
+                                          <uix:TargetAnchorable ContentHash="XTOReLSRn0i4J03-KL9prQ" DesignTimeRectangle="1, 1, 155, 203" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='3' /&gt;" Guid="83ee690b-6a6c-4a47-bab3-f2cd6686dcf2" InformativeScreenshot="b9b39e88743415b0421d549b8b0fd90d.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/fJ-oWA-Cq06wRRN3jeCx6g" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='popdown' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                        </uix:VerifyExecutionOptions.Target>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NKeyboardShortcuts.VerifyOptions>
+                                  </uix:NKeyboardShortcuts>
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:RetryScope.ActivityBody>
+                            <ui:RetryScope.Condition>
+                              <ActivityFunc x:TypeArguments="x:Boolean">
+                                <uix:NCheckState DisplayName="Check Customer State If Visible" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="451.2,855.2" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Timeout="1" Version="V5">
+                                  <uix:NCheckState.IfExists>
+                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,316.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select Customer State" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,256.8" sap2010:WorkflowViewState.IdRef="NClick_18" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Version="V5">
+                                        <uix:NClick.Target>
+                                          <uix:TargetAnchorable CVScreenId="7a3a3270-69b7-4a66-b244-8dd1c0237542" ContentHash="tDBZbdkB60am4Yhk3i30hA" CvTextArea="0, 82, 66, 16" CvTextArgument="[CurrentRow(&quot;state&quot;).ToString()]" CvType="Text" DesignTimeRectangle="0, 82, 66, 16" ElementType="Text" ElementVisibilityArgument="Visible" Guid="6a0b1a44-49eb-491e-bca7-92a86a34ef11" InformativeScreenshot="39cfb2067517bb4a382c44f794d718bd.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/B2oh9R2Tt02ysLEAZcCElQ" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='popdown' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                                        </uix:NClick.Target>
+                                        <uix:NClick.VerifyOptions>
+                                          <uix:VerifyExecutionOptions Mode="TextChanges">
+                                            <uix:VerifyExecutionOptions.Target>
+                                              <uix:TargetAnchorable CVScreenId="eabb7f36-c8bb-4cb9-a451-30ea2892ddf3" ContentHash="UC181zQSYU6SpxN5qPhzOA" CvElementArea="907, 167, 178, 30" CvType="InputBox" DesignTimeRectangle="910, 170, 176, 26" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='27' /&gt;" Guid="20ed93ce-6061-4143-9324-9ddae3da44ec" InformativeScreenshot="a05b617f052f0ac4853848f864b53119.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/yZrDBZ9ilE-rrqImxO35Ew" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                                                <uix:TargetAnchorable.Anchors>
+                                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                    <uix:Target CVScreenId="eabb7f36-c8bb-4cb9-a451-30ea2892ddf3" CvTextArea="637, 175, 36, 15" CvTextArgument="State" CvType="Text" DesignTimeRectangle="636, 166, 43, 34" FullSelectorArgument="&lt;wnd cls='TkChild' idx='28' /&gt;" Guid="37206af5-3cd7-4b95-9baf-e017f812748d" SearchSteps="Selector, CV" />
+                                                  </scg:List>
+                                                </uix:TargetAnchorable.Anchors>
+                                              </uix:TargetAnchorable>
+                                            </uix:VerifyExecutionOptions.Target>
+                                            <uix:VerifyExecutionOptions.Timeout>
+                                              <InArgument x:TypeArguments="x:Double" />
+                                            </uix:VerifyExecutionOptions.Timeout>
+                                          </uix:VerifyExecutionOptions>
+                                        </uix:NClick.VerifyOptions>
+                                      </uix:NClick>
+                                    </Sequence>
+                                  </uix:NCheckState.IfExists>
+                                  <uix:NCheckState.IfNotExists>
+                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Scrolling down for possible options&quot;]" />
+                                    </Sequence>
+                                  </uix:NCheckState.IfNotExists>
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable CVScreenId="8c1046e9-7d1a-4164-90ae-d957ce47c430" ContentHash="So8_ep3GNEO1h8YZv0BtXw" CvTextArea="0, 123, 85, 15" CvTextArgument="[CurrentRow(&quot;state&quot;).ToString()]" CvType="Text" DesignTimeRectangle="0, 123, 85, 15" ElementType="Text" ElementVisibilityArgument="Interactive" Guid="fdede60f-7b89-4fc8-b5b9-0351b3762487" InformativeScreenshot="27e4c04f411fd5a871396a2b5098563a.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/c2l2ZpSkM0mzMoN7FLvbtw" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='popdown' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                                  </uix:NCheckState.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheckState>
+                              </ActivityFunc>
+                            </ui:RetryScope.Condition>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:RetryScope>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="[UiPath.UIAutomationNext.Enums.NTypeByClipboardMode.WhenPossible]" DisplayName="Type Into 'Address' Field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="SameAsCard" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Text="[CurrentRow(&quot;address&quot;).ToString()]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="z3QVsfxRhUy8Fgzc2DPyRw" DesignTimeRectangle="216, 160, 790, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='25' /&gt;" Guid="ff19f495-e8bc-4fe5-8e25-6245167b4d46" InformativeScreenshot="ec31075ea333e080f0df464cc13f81d6.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/ntxOaPOze0WmsPJdoyB9VA" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions Mode="AspectChanges">
+                                <uix:VerifyExecutionTypeIntoOptions.Target>
+                                  <uix:TargetAnchorable ContentHash="z3QVsfxRhUy8Fgzc2DPyRw" DesignTimeRectangle="216, 160, 790, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='25' /&gt;" Guid="ff19f495-e8bc-4fe5-8e25-6245167b4d46" InformativeScreenshot="ec31075ea333e080f0df464cc13f81d6.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/ntxOaPOze0WmsPJdoyB9VA" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:VerifyExecutionTypeIntoOptions.Target>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="[UiPath.UIAutomationNext.Enums.NTypeByClipboardMode.WhenPossible]" DisplayName="Type Into 'City' Field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="SameAsCard" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Text="[CurrentRow(&quot;city&quot;).ToString()]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="BHejUfUqMUOBH3UdkBXhpg" DesignTimeRectangle="216, 187, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='23' /&gt;" Guid="e0fa6e97-2959-4b72-abdd-be786fe3a62d" InformativeScreenshot="9e79e4778093238be5737a2651590460.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/TGNEOfGz_kuwbisTDQYTHQ" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions Mode="AspectChanges">
+                                <uix:VerifyExecutionTypeIntoOptions.Target>
+                                  <uix:TargetAnchorable ContentHash="BHejUfUqMUOBH3UdkBXhpg" DesignTimeRectangle="216, 187, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='23' /&gt;" Guid="e0fa6e97-2959-4b72-abdd-be786fe3a62d" InformativeScreenshot="9e79e4778093238be5737a2651590460.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/TGNEOfGz_kuwbisTDQYTHQ" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:VerifyExecutionTypeIntoOptions.Target>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="[UiPath.UIAutomationNext.Enums.NTypeByClipboardMode.WhenPossible]" DisplayName="Type Into 'Home Phone' Field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_8" InteractionMode="SameAsCard" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Text="[CurrentRow(&quot;home phone&quot;).ToString()]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="YuKheod_60mc1VipH4bcoQ" DesignTimeRectangle="728, 187, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='21' /&gt;" Guid="cf246fce-40e5-4485-a457-0d48da1907f1" InformativeScreenshot="40c077d57ca739761455c758a6122175.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/2ciZBzNbE0iGLWrWLO1qzw" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions Mode="AspectChanges">
+                                <uix:VerifyExecutionTypeIntoOptions.Target>
+                                  <uix:TargetAnchorable ContentHash="YuKheod_60mc1VipH4bcoQ" DesignTimeRectangle="728, 187, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='21' /&gt;" Guid="cf246fce-40e5-4485-a457-0d48da1907f1" InformativeScreenshot="40c077d57ca739761455c758a6122175.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/2ciZBzNbE0iGLWrWLO1qzw" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:VerifyExecutionTypeIntoOptions.Target>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="[UiPath.UIAutomationNext.Enums.NTypeByClipboardMode.WhenPossible]" DisplayName="Type Into 'Work Phone' Field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="SameAsCard" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Text="[CurrentRow(&quot;work phone&quot;).ToString()]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="isOh_kEfK02gCJm35hKX9Q" DesignTimeRectangle="216, 214, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='19' /&gt;" Guid="84f643ff-2d2d-492b-a705-17558d7fd7cc" InformativeScreenshot="2f27c28376a2d54fd32c653e358e5911.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/DfLXVoqSbE6MsYQnX6voxQ" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions Mode="AspectChanges">
+                                <uix:VerifyExecutionTypeIntoOptions.Target>
+                                  <uix:TargetAnchorable ContentHash="isOh_kEfK02gCJm35hKX9Q" DesignTimeRectangle="216, 214, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='19' /&gt;" Guid="84f643ff-2d2d-492b-a705-17558d7fd7cc" InformativeScreenshot="2f27c28376a2d54fd32c653e358e5911.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/DfLXVoqSbE6MsYQnX6voxQ" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:VerifyExecutionTypeIntoOptions.Target>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="[UiPath.UIAutomationNext.Enums.NTypeByClipboardMode.WhenPossible]" DisplayName="Type Into 'Personal Email' Field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Text="[CurrentRow(&quot;personal email&quot;).ToString()]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="QpZpNZ4pGkW7VM7s9OBvxw" DesignTimeRectangle="728, 214, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='17' /&gt;" Guid="5fc033d3-4796-430f-a3d0-78dea3516584" InformativeScreenshot="d771a7b8ac65369d15cd89e0f0d7ebb4.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/k3L87p-740akxFZGFYLeaQ" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions Mode="AspectChanges">
+                                <uix:VerifyExecutionTypeIntoOptions.Target>
+                                  <uix:TargetAnchorable ContentHash="QpZpNZ4pGkW7VM7s9OBvxw" DesignTimeRectangle="728, 214, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='17' /&gt;" Guid="5fc033d3-4796-430f-a3d0-78dea3516584" InformativeScreenshot="d771a7b8ac65369d15cd89e0f0d7ebb4.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/k3L87p-740akxFZGFYLeaQ" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:VerifyExecutionTypeIntoOptions.Target>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="[UiPath.UIAutomationNext.Enums.NTypeByClipboardMode.WhenPossible]" DisplayName="Type Into 'WorkEmail' Field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,317.6" sap2010:WorkflowViewState.IdRef="NTypeInto_10" InteractionMode="SameAsCard" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Text="[CurrentRow(&quot;work email&quot;).ToString()]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="8nhGW8KJukCYWgRTcxhCyQ" DesignTimeRectangle="216, 241, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='15' /&gt;" Guid="8aad9278-6386-4960-a973-24af8cb54ac4" InformativeScreenshot="0016f0a20f434024be974f1361018e16.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/Q5SuqtC5N0-cJTtocdeS1A" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions Mode="AspectChanges">
+                                <uix:VerifyExecutionTypeIntoOptions.Target>
+                                  <uix:TargetAnchorable ContentHash="8nhGW8KJukCYWgRTcxhCyQ" DesignTimeRectangle="216, 241, 144, 27" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='15' /&gt;" Guid="8aad9278-6386-4960-a973-24af8cb54ac4" InformativeScreenshot="0016f0a20f434024be974f1361018e16.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/Q5SuqtC5N0-cJTtocdeS1A" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:VerifyExecutionTypeIntoOptions.Target>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;Add Customer&quot;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,265.6" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable ContentHash="l4ZvryHY4k6_wO8m3_jePg" DesignTimeRectangle="701, 278, 99, 29" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='TkChild' idx='13' /&gt;" Guid="126c3ce2-aee1-417b-9f90-b775e4af91a5" InformativeScreenshot="149e26bbca7c780d22425a8c5c97472c.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/UeT-Upou3UKsWlbGjCnHZw" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions Mode="Appears">
+                                <uix:VerifyExecutionOptions.Target>
+                                  <uix:TargetAnchorable CVScreenId="9cc77868-cca0-4625-8c1f-2450b527747a" ContentHash="riLI6kkp6UScUtPAIP5ZFw" CvTextArea="85, 80, 177, 15" CvTextArgument="Customer added to the list." CvType="Text" DesignTimeRectangle="88, 80, 176, 19" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='65535' title='Customer added to the list.' /&gt;" Guid="f4988585-911b-4a6e-9a56-2d69748f0442" InformativeScreenshot="99187ec7791a0c9eaf8bf05ea6b6b4a7.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/mI3OufKOQka2HkMg7MZ9Rg" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='#32770' title='Success' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:VerifyExecutionOptions.Target>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Confirming Successfull Add" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="476.8,265.6" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4fe3c1df-a6b1-441a-994a-6d9cac776425" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable ContentHash="rVfWdE6K4kCDcYAj1FiSKg" DesignTimeRectangle="151, 119, 75, 23" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='2' title='OK' /&gt;" Guid="4aa1139e-3984-4706-acac-fa2303352162" InformativeScreenshot="ee88b16c53a035a617f9f2793bec22a5.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/2jXGXIgJ7Ua64k6cW2qNAA" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='#32770' title='Success' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions Mode="Disappears">
+                                <uix:VerifyExecutionOptions.Target>
+                                  <uix:TargetAnchorable CVScreenId="9cc77868-cca0-4625-8c1f-2450b527747a" ContentHash="riLI6kkp6UScUtPAIP5ZFw" CvTextArea="85, 80, 177, 15" CvTextArgument="Customer added to the list." CvType="Text" DesignTimeRectangle="88, 80, 176, 19" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='65535' title='Customer added to the list.' /&gt;" Guid="f4988585-911b-4a6e-9a56-2d69748f0442" InformativeScreenshot="99187ec7791a0c9eaf8bf05ea6b6b4a7.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/mI3OufKOQka2HkMg7MZ9Rg" ScopeSelectorArgument="&lt;wnd app='crm_desktop_app.exe' cls='#32770' title='Success' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:VerifyExecutionOptions.Target>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="476.8,48" sap2010:WorkflowViewState.IdRef="Delay_1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Delay>
+                        </Sequence>
+                      </TryCatch.Try>
+                      <TryCatch.Catches>
+                        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                          <ActivityAction x:TypeArguments="s:Exception">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="510.4,225.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="476.8,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Desktop app customer onboarding encounter error  : &quot; + exception.Message + &quot; on processing customer &quot; + CurrentRow(&quot;first name&quot;).ToString() +&quot; &quot;  + CurrentRow(&quot;last name&quot;).ToString()]" />
+                            </Sequence>
+                          </ActivityAction>
+                        </Catch>
+                      </TryCatch.Catches>
+                      <TryCatch.Finally>
+                        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="510.4,225.6" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="476.8,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Desktop app processed customer &quot; + CurrentRow(&quot;first name&quot;).ToString() +&quot; &quot;  + CurrentRow(&quot;last name&quot;).ToString() + &quot; completed&quot;]" />
+                        </Sequence>
+                      </TryCatch.Finally>
+                    </TryCatch>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="98, 98, 1270, 824" ContentHash="p70cf2TkZEKusl9D9ISClg" FilePath="C:\Users\SLIC\Documents\UiPath\RPA_CustomerOnboarding\crm_desktop_app.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPcSURBVFhHzZV/TJR1HMdf9xx4/LijqUC/kITQIg9wBxnmcjVbDjd0xLJIz0VGkNHQmtamm7R+LYSxWxZuOYL5uyVSgBS1hrnFKIOGNnSraM6C0FR0zQt0T/s+cDf9fu+Oh1ub/fHa7t7P9/28P9/v83k+D7qu818C3A6UAV8AFfJ1GUUIFyAKeC/Wbh/OK1g58MAy97fAenmdjCJMFSASSAKasnMX/rFpe5ueU7Jbn5W7qg14UV4vowhTBfgQOLM0f/nZoq1NRrjg1oy8T4Hn5fUyijAVgA13JCUP5Rc8Pli7r9MfLpiemnsIWCN7ZBTBLMAyW1TU+Yamz8eO9PykL3xhzw0F2OIS24FM2SejCGYA5mqadmFHw27voxsO6A+V79XvXVF50hfuKq4/AwwAFtkrowhmAJorNr526dW6DiMw48ma/uQH1/T6CpiZtkgc/5uyLxCKMBlAjt3hON9ypHf8uJ/bdcXmSOxyFddfE//Tl1d2A3+ZOX7jfrIQCiAd2FxaXjFS8m7LeLOlLGiJn7v4e9/u5zz2cjcW7TdgiewPhCKEAjgA/F3X0DhqHP1TNSewWEbmu+u8vgLuK3jjO+BnM8/fuKcsBAOIs1qtlwuLVp9ubP7KCItNSG2Nu9Pp370gesasw8AW2R8MRQgGUOzMcg0d6vxB93x8VM9y1/0CXHI+UX3BF57lrhM7HxGTUfYHQxGCAXz9VlX1lcItB42wW5KzmqNnJPk7f7wf7hfd3yZ7Q6EIgRA70jTN29XbZwRlr20YBs7ek7/5d1949rP1w2AR73+e7A+FIgQCKMp05fy5r+OYEZbyyLp2i2Y9l1Oy67rdLxC7b5W9k6EIgRBDxb229OLWnb7mS2mJTUzr8T/71R+IfhgEUmXvZChCIID6t7fVeNd72kXgKBbLr3ctesY/emPiZ4tPb6XsM4MiyABOoKqq1uMtrz2sp694vQu4Nt+946oIn1f4Tg/wD+CRvWZQBBnxTgNjL72y6fLG9zv0hPQln1m0iHO+3ac8XHbUOi1GDJ9VstcMiiADlKbPcw7t/+Tg6Eet3Xr09KR2LTLqtK+AjJXVPwIngAjZawZFkAGSxSvYf7Jf7z5+SteskcciouJOTRQwFmGzfwOsk31mUYRAANtm3z1nsOd431Ux/WyOhL7Mpz0D0+wzO4HtZud+IBQhEIAV+DImNnYI0C2aVQyci+E23g33loVAALeJISPCr0PM/DR57VRRhGCIJgMaJ8LHgMXymnBQhFAArokC9svXwkURQjHxKMSPMvlauChCKP4PBcTf1AIMA+y82QU4gKWyHi7/AjsRTPKWYwn2AAAAAElFTkSuQmCC" InformativeScreenshot="1c289472119e6313bef7f4a9d47f77bc.jpg" Reference="MJ2ZFT4AyU6K9YUu_j9EbQ/xJpF7jz1VUefhtTzOtoaZg" Selector="&lt;wnd app='crm_desktop_app.exe' cls='TkTopLevel' title='The Automation Challenge | CRM App' /&gt;" Version="V2">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

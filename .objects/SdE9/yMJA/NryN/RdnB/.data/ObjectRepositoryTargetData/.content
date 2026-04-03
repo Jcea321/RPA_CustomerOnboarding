@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="QiV7gxKYoU63nVE0tAJC5g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="theautomationchallenge.com/crm" CVScreenId="7d1ed257-7ef2-403d-b5cb-d13d5f858fa6" CvElementArea="237, 321, 27, 27" CvType="RadioButton" DesignTimeRectangle="237, 321, 27, 27" ElementType="RadioButton" ElementVisibilityArgument="Interactive" Guid="59666231-a544-44da-aa48-0c7572bcf519" ScopeSelectorArgument="&lt;html app='msedge.exe' title='CRM' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="7d1ed257-7ef2-403d-b5cb-d13d5f858fa6" CvTextArea="271, 326, 37, 17" CvTextArgument="Male" CvType="Text" DesignTimeRectangle="265, 327, 172, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Male' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Male' /&gt;" Guid="b9552612-d807-4a1c-9288-0d41925e1577" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="d17e83955a47f277b7921b5416e9ab0f.jpg" xmlns="">0m5CtMOw-KUm74ohf-Yy5kA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,13 +1,17 @@
 ﻿{
-  "Name": "TkChild(5)",
+  "Name": "Personal Email Input Field",
   "Type": "Element",
+  "TaxonomyType": "Element",
   "Id": "k3L87p-740akxFZGFYLeaQ",
   "Reference": "MJ2ZFT4AyU6K9YUu_j9EbQ/k3L87p-740akxFZGFYLeaQ",
   "ParentRef": "MJ2ZFT4AyU6K9YUu_j9EbQ/xJpF7jz1VUefhtTzOtoaZg",
   "Created": "2026-03-28T17:21:58.6840101Z",
-  "Updated": "2026-03-28T17:21:58.6840101Z",
+  "Updated": "2026-04-03T13:56:29.1741702Z",
   "CreatedBy": [
     "UiPath.UIAutomationCore, Version=25.10.28.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
     "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
   ]
 }

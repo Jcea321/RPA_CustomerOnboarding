@@ -1,14 +1,17 @@
 ﻿{
-  "Name": "California(1)",
+  "Name": "State Selection Display",
   "Type": "Element",
   "TaxonomyType": "Label",
   "Id": "fJ-oWA-Cq06wRRN3jeCx6g",
   "Reference": "MJ2ZFT4AyU6K9YUu_j9EbQ/fJ-oWA-Cq06wRRN3jeCx6g",
   "ParentRef": "MJ2ZFT4AyU6K9YUu_j9EbQ/xJpF7jz1VUefhtTzOtoaZg",
   "Created": "2026-04-02T16:04:57.9247626Z",
-  "Updated": "2026-04-02T16:04:57.9247626Z",
+  "Updated": "2026-04-03T13:49:56.7426398Z",
   "CreatedBy": [
     "UiPath.UIAutomationCore, Version=25.10.28.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
     "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
   ]
 }
